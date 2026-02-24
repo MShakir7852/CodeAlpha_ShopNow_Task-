@@ -1,11 +1,11 @@
-import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import { useState } from 'react'
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 function login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -18,20 +18,14 @@ function login() {
         body: JSON.stringify({ email, password })
       });
 
-
       const data = await response.json();
-      console.log("Login response:", data);
+
       if (response.ok) {
-        // Save token
         localStorage.setItem("token", data.token);
-
-        alert("Login Successful ✅");
-
-
-        // Redirect
+        alert("Login Successful");
         navigate("/");
       } else {
-        alert(data.message || "Login Failed ❌");
+        alert("Login Failed");
       }
 
     } catch (error) {
@@ -41,26 +35,59 @@ function login() {
   };
 
   return (
-    <div>
-      <div className="login">
-        <h1>Login</h1>
+    <div className="container d-flex justify-content-center align-items-center vh-100">
+
+      <div className="card shadow p-4" style={{ width: "100%", maxWidth: "400px" }}>
+        <h2 className="text-center mb-4">Login</h2>
+
         <form onSubmit={handleSubmit}>
+
           <div className="mb-3">
-            <label htmlFor="email" className="form-label">Email address</label>
-            <input type="email" className="form-control" id="email" placeholder="Enter email" onChange={(e) => setEmail(e.target.value)} value={email} />
+            <label htmlFor="email" className="form-label">
+              Email address
+            </label>
+            <input
+              type="email"
+              className="form-control"
+              id="email"
+              placeholder="Enter email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
           </div>
+
           <div className="mb-3">
-            <label htmlFor="password" className="form-label">Password</label>
-            <input type="password" className="form-control" id="password" placeholder="Enter password" onChange={(e) => setPassword(e.target.value)} value={password} />
+            <label htmlFor="password" className="form-label">
+              Password
+            </label>
+            <input
+              type="password"
+              className="form-control"
+              id="password"
+              placeholder="Enter password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
           </div>
-          <button type="submit" className="btn btn-primary">Login</button>
-          <span>
-            Don't have an account? <Link to="/auth/register">Register here</Link>
-          </span>
+
+          <button type="submit" className="btn btn-primary w-100 mb-3">
+            Login
+          </button>
+
+          <div className="text-center">
+            <small>
+              Don't have an account?{" "}
+              <Link to="/auth/register">Register here</Link>
+            </small>
+          </div>
+
         </form>
       </div>
+
     </div>
-  )
+  );
 }
 
-export default login
+export default login;
