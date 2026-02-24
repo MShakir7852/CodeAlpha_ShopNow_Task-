@@ -149,3 +149,18 @@ body{
 
 
 }
+.cart-icon {
+  position: relative;
+  font-size: 22px;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+}

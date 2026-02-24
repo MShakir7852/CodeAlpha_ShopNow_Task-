@@ -1,38 +1,61 @@
-import React from 'react'
+import React from "react";
 
 function Cartpage() {
-    return (
-        <div>
-            <h1>Cart Item</h1>
-            <hr />
-            <div className="cardlist">
-                <ul>
-                    <li className='d-flex justify-content-between align-items-center'>
+  return (
+    <div className="container my-5">
+      <h1 className="mb-4 text-center">Cart Items</h1>
+      <hr />
 
-                        <img src="https://m.media-amazon.com/images/I/71w+qG+9sL._AC_UL320_.jpg" alt="Product Image" />
-                        <div className="mainbody d-flex justify-content-between gap-5">
-                            <div className="body d-flex flex-column">
-                                <h3 className="product-title">Product Name</h3>
-                                <p>$19.99</p>
-                                <div className="button">
-                                    <button className="btn btn-secondary h-auto w-25">-</button>
-                                    <span className="mx-2">1</span>
-                                    <button className="btn btn-secondary h-auto w-25">+</button>
-                                </div>
-                            </div>
-                            <button className="btn btn-primary h-auto w-25">Delete</button>
-                        </div>
-                       
-                    </li>
-                     <hr />
-                </ul>
+      {/* Cart Item */}
+      <div className="card mb-4 shadow-sm">
+        <div className="card-body">
+          <div className="row align-items-center">
+
+            {/* Product Image */}
+            <div className="col-12 col-md-3 text-center mb-3 mb-md-0">
+              <img
+                src="https://m.media-amazon.com/images/I/71w+qG+9sL._AC_UL320_.jpg"
+                alt="Product"
+                className="img-fluid rounded"
+                style={{ maxHeight: "150px", objectFit: "contain" }}
+              />
             </div>
-                <div className="total d-flex flex-column justify-content-end gap-5">
-                    <h3>Total: $19.99</h3>
-                    <button className="btn btn-success h-auto w-25">Checkout</button>
-                </div>
+
+            {/* Product Details */}
+            <div className="col-12 col-md-6">
+              <h5 className="fw-bold">Product Name</h5>
+              <p className="text-primary fw-semibold">$19.99</p>
+
+              {/* Quantity Buttons */}
+              <div className="d-flex align-items-center gap-2">
+                <button className="btn btn-outline-secondary btn-sm">-</button>
+                <span>1</span>
+                <button className="btn btn-outline-secondary btn-sm">+</button>
+              </div>
+            </div>
+
+            {/* Delete Button */}
+            <div className="col-12 col-md-3 text-md-end mt-3 mt-md-0">
+              <button className="btn btn-danger btn-sm">
+                Delete
+              </button>
+            </div>
+
+          </div>
         </div>
-    )
+      </div>
+
+      {/* Total Section */}
+      <div className="card shadow-sm">
+        <div className="card-body d-flex flex-column flex-md-row justify-content-between align-items-center">
+          <h4 className="mb-3 mb-md-0">Total: $19.99</h4>
+          <button className="btn btn-success px-4">
+            Checkout
+          </button>
+        </div>
+      </div>
+    </div>
+  );
 }
 
-export default Cartpage
+export default Cartpage;

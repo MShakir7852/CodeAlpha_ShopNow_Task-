@@ -8,6 +8,7 @@ import Cartpage from './pages/Cartpage'
 import ProductDetailPage from './pages/productDetailPage'
 import Register from './components/register'
 import Login from './components/login'
+import "@fortawesome/fontawesome-free/css/all.min.css";
 function App() {
   return (
     <div>

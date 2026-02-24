@@ -1,50 +1,83 @@
-import React from 'react'
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
-
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 function navbar() {
+  const navigate = useNavigate();
+
   const [isLogin, setIsLogin] = useState(
     localStorage.getItem("token") ? true : false
-  )
-const handleLogout = () => {
+  );
+
+  const handleLogout = () => {
     localStorage.removeItem("token");
     setIsLogin(false);
     navigate("/auth/login");
   };
+
   return (
-    <nav className="navbar bg-primary navbar-expand-lg text-white" data-bs-theme="dark">
-      <div className="container-fluid">
-        <Link className="navbar-brand" to="/">ShopNow</Link>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div className="container">
+
+        {/* Logo */}
+        <Link className="navbar-brand fw-bold" to="/">
+          ShopNow
+        </Link>
+
+        {/* Toggle Button (Mobile) */}
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+
+        {/* Navbar Links */}
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav me-auto">
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/">Home</Link>
+              <Link className="nav-link" to="/">Home</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/services">Category </Link>
+              <Link className="nav-link" to="/services">Category</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/contact">Contact</Link>
+              <Link className="nav-link" to="/contact">Contact</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/about">About</Link>
+              <Link className="nav-link" to="/about">About</Link>
             </li>
           </ul>
-        </div>
-        <Link to="/cart">Cart</Link>
-        {isLogin ? <Link className="nav-link active" aria-current="page" to="/auth/login" onClick={handleLogout}>Logout</Link> :
-          <div className="gap-2 d-md-flex justify-content-md-end">
-            <Link className="nav-link active" aria-current="page" to="/auth/login">Login</Link>
-            <Link className="nav-link active" aria-current="page" to="/auth/register">Register</Link>
 
-          </div>}
+          {/* Right Side */}
+          <div className="d-flex align-items-center gap-3">
+
+            {/* Cart Icon */}
+            <Link to="/cart" className="text-white fs-5">
+              <i className="fa-solid fa-cart-arrow-down"></i>
+            </Link>
+
+            {/* Auth Buttons */}
+            {isLogin ? (
+              <button onClick={handleLogout} className="btn btn-light btn-sm">
+                Logout
+              </button>
+            ) : (
+              <>
+                <Link to="/auth/login" className="btn btn-light btn-sm">
+                  Login
+                </Link>
+                <Link to="/auth/register" className="btn btn-outline-light btn-sm">
+                  Register
+                </Link>
+              </>
+            )}
+          </div>
+        </div>
       </div>
     </nav>
-  )
+  );
 }
 
-export default navbar
+export default navbar;
