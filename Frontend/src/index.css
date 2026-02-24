@@ -1,0 +1,151 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+}
+.Section1{
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
+    height: 100vh;
+    background-image: url("./assets/Cream\ Brown\ Abstract\ Photo\ Collage\ New\ Arrival\ Facebook\ App\ Add\ \(1\).png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+   
+}
+.heading{
+    background-color: black;
+    opacity: 0.7;
+    width: 50%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: antiquewhite;
+}
+.Section1 h1{
+    font-size: 3rem;
+    margin-bottom: 20px;
+    background-color: black;
+    opacity: 0.7;
+     width: 50%;
+    height: 200px;
+}
+.Category{
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    flex-direction: column;
+    
+}
+.Category h2{
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+.Category ul li{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    gap: 20px;
+
+}
+.Category ul li a{
+    color: white;
+    font-weight: bold;
+}
+.Category ul{
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    gap: 20px;
+}
+
+.Category ul .Electronic a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 2px solid black;
+    background-image: url(./assets/Minimalist\ Morning\ Affirmation\ Flyer\ .png);
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    width: 200px;
+}
+.Category ul .Fashion a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 2px solid black;
+    background-image: url(./assets/Fasion.png);
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    width: 200px;
+}
+.Category ul .Home-Kitchen a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 2px solid black;
+    background-image: url(./assets/Home\ &\ Kichen.png);
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    width: 200px;
+    color: white;
+}
+.product .card{
+    width: 20%;
+    height: 200px;
+}
+.cardsection{
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    gap: 20px;
+    padding: 20px;
+}
+.registr, .login{
+    width: 100%;
+    height: auto;
+    background-color: rgb(230, 223, 223);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+
+}
+.registr form, .login form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 400px;
+    padding: 20px;
+    border: 2px solid rgb(183, 181, 181);
+
+
+}
